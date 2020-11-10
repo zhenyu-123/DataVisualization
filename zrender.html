@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ 
+    <!-- <script src="https://cdn.jsdelivr.net/npm/zrender@4.3.0/dist/zrender.js"></script> -->
+    <script src="./js/zrender.js"></script>
+  </head>
+  <body>
+    <div id="container" style="width: 800px;height: 800px;"></div>
+    <script>
+      var zr = zrender.init(document.getElementById('container')); // 初始化
+      
+      //  定义矩形
+      var rect = new zrender.Rect({
+        // 矩形的形状
+        shape: {
+          x: 0,
+          y: 0,
+          width: 50,
+          height: 50
+        },
+        style: {
+          fill: 'red', // 填充颜色
+          lineWidth: 0 // 边框宽度
+        }
+      });
+      
+      // 定义线段
+      var line = new zrender.Polyline({
+        shape: {
+          points:[
+            [100, 100],
+            [250, 75],
+            [300, 100]
+          ]
+        },
+        style: {
+          stroke: 'blue',
+          lineWidth: 1
+        }
+      });
+      
+      // 定义圆
+      var circle = new zrender.Circle({
+        shape: {
+          cx: 200,
+          cy: 200,
+          r: 50
+        },
+        style: {
+          fill: 'red',
+          stroke: 'green',
+          lineWidth: 2
+        }
+      });
+
+	 // 定义点
+      var point = new zrender.Polyline({
+        shape: {
+          points:[
+            [300, 300],
+            [301, 301]
+          ]
+        },
+        style: {
+          stroke: 'red',
+          lineWidth: 1
+        }
+      });
+      zr.add(rect); // 绘制矩形
+      zr.add(line); // 绘制线段
+      zr.add(circle); // 绘制原型
+      zr.add(point);  // 绘制点
+    </script>
+  </body>
+</html>
