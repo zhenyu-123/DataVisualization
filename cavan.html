@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="500">您的浏览器不支持</canvas>
+</body>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext('2d')//获取canvas对象
+    //绘制矩形
+    ctx.fillStyle = 'red';//填充色
+    ctx.fillRect(0, 0, 50, 50);//绘制矩形
+
+    //绘制线段
+    ctx.beginPath();//开始绘制线段,结束上一次的绘制
+    ctx.lineWidth = 1;//
+    ctx.strokeStyle = 'blue'//线段颜色
+    ctx.moveTo(100, 100);//起始坐标
+    ctx.lineTo(259, 75);//第二点坐标
+    ctx.lineTo(259, 105);//第三点坐标
+    ctx.stroke();//绘制线段
+
+    //绘制圆形
+    ctx.beginPath();
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = 'green';
+    ctx.fillStyle = 'red';
+    ctx.arc(200, 200, 50, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fill();
+
+    //绘制点
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'red';
+    ctx.moveTo(300, 300);
+    ctx.lineTo(301, 301);
+    ctx.stroke();
+
+
+</script>
+
+</html>
